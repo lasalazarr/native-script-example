@@ -13,6 +13,7 @@ platforms/
 tmp/
 typings/
 report/
-.idea
 
-platforms
+platforms/
+.idea/
+
