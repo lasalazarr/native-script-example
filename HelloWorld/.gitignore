@@ -3,6 +3,7 @@
 npm-debug.log
 .DS_Store
 
+
 *.js.map
 app/**/*.js
 hooks/
@@ -12,5 +13,6 @@ platforms/
 tmp/
 typings/
 report/
-.idea/
 .idea
+
+platforms
