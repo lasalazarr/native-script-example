@@ -1,3 +1,8 @@
 
-platforms/
+/HelloWorld/platforms/
+HelloWorld/platforms/
 .idea/
+
+HelloWorld/platforms/ios/build/emulator/HelloWorld.app.dSYM/Contents/Resources/DWARF/HelloWorld
+
+HelloWorld/platforms/ios/build/emulator/.nsbuildinfo
