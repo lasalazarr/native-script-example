@@ -11,7 +11,7 @@ import { Component } from "@angular/core";
       from { transform: rotate(0); } to { transform: rotate(360); }
     }
     Image {
-      animation-name: spin; animation-duration: 3s;
+      animation-name: spin; animation-duration: 10s;
       animation-iteration-count: infinite;
       animation-timing-function: linear;
     }
