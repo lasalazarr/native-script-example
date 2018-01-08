@@ -28,5 +28,15 @@ function completeRegistration() {
 }
 
 exports.register = function() {
-    completeRegistration();
+    // completeRegistration();
+    exports.register = function() {
+        if (user.isValidEmail()) {
+            completeRegistration();
+        } else {
+            dialogsModule.alert({
+                message: "Enter a valid email address.",
+                okButtonText: "OK"
+            });
+        }
+    };
 };
