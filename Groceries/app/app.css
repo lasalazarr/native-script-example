@@ -4,6 +4,10 @@ Page {
     background-color: white;
     font-size: 17;
 }
+ActionBar {
+    color: white;
+    background-color: #2E6DAD;
+}
 TextField {
     margin: 10;
     padding: 10;

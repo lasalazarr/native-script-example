@@ -12,6 +12,8 @@ var pageData = new observableModule.fromObject({
     groceryList: groceryList,
     grocery: ""
 });
+var swipeDelete = require("../../shared/utils/ios-swipe-delete");
+
 
 // var pageData = new observableModule.fromObject({
 //     groceryList: new ObservableArray([
@@ -34,6 +36,14 @@ var pageData = new observableModule.fromObject({
 
 exports.loaded = function(args) {
     page = args.object;
+
+    if (page.ios) {
+        var listView = page.getViewById("groceryList");
+        swipeDelete.enable(listView, function(index) {
+            groceryList.delete(index);
+        });
+    }
+
     var listView = page.getViewById("groceryList");
     page.bindingContext = pageData;
 
@@ -41,10 +51,10 @@ exports.loaded = function(args) {
     pageData.set("isLoading", true);
     groceryList.load().then(function() {
         pageData.set("isLoading", false);
-        listView.animate({
-            opacity: 1,
-            duration: 1000
-        });
+        //listView.animate({
+        //    opacity: 1,
+        //    duration: 1000
+        //});
     });
 };
 
@@ -79,4 +89,10 @@ exports.share = function() {
     }
     var listString = list.join(", ").trim();
     socialShare.shareText(listString);
+};
+
+exports.delete = function(args) {
+    var item = args.view.bindingContext;
+    var index = groceryList.indexOf(item);
+    groceryList.delete(index);
 };
